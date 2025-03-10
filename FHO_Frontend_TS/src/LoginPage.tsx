@@ -38,7 +38,7 @@ const LoginPage = () => {
     useEffect ( () => {
 
         try {
-            console.log("Inside useEffect LoginPage, Location state is now ", locationHook.state) ;
+            //console.log("Inside useEffect LoginPage, Location state is now ", locationHook.state) ;
             if (locationHook.state.isSignUpSuccess) {
                 toast.success('Signed up Successfully !!!', {duration: 1000});
             } ;
@@ -82,24 +82,11 @@ const LoginPage = () => {
 
             }
 
-            // Cookies Http Only
-            // if(responseFromBE.cookies.accessCookie && responseFromBE.cookies.refreshCookie ) {
-            //     setrefreshToken(responseFromBE.cookies.refreshCookie) ;
-            //     setAccessToken(responseFromBE.cookies.accessCookie) ;
-    
-            //     console.log("Stored both accessToken and refreshToken") ;
-            //     console.log("Location state is now ", locationHook.state) ;
-            //     navigate( locationHook.state || '/userPage') ;
-            // }
-    
-            // else {
-            //     throw error ("No valid cookie from login");
-            // }
         }
 
         catch(err) {
             console.log(err) ;
-            console.log("Inside Login Failure Response")
+            //console.log("Inside Login Failure Response")
 
             loginFormRef.current?.classList.add("formerror");
 

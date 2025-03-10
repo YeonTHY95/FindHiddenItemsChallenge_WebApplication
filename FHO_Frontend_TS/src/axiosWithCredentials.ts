@@ -9,8 +9,8 @@ const axiosWithCredentials =  axios.create({
 export const requestInterceptor = axiosWithCredentials.interceptors.request.use( request => {
     console.log("Inside Request Interception True");
     request.withCredentials = true;
-    console.log(`Request is ${JSON.stringify(request)}`);
-    console.log(`Request's URL is ${request.url}`);
+    //console.log(`Request is ${JSON.stringify(request)}`);
+    // console.log(`Request's URL is ${request.url}`);
     //request.withXSRFToken = true;
     return request ;
 }, error => {
@@ -25,11 +25,11 @@ export const responseInterceptor = axiosWithCredentials.interceptors.response.us
 }, async error => {
     console.log("Inside Response Interception Error");
     const prevRequest = error.config ;
-    console.log("Error Config is ", JSON.stringify(error.config));
+    // console.log("Error Config is ", JSON.stringify(error.config));
     const previousURL = error.config.url;
-    console.log(`PreviousURL is ${previousURL}`);
-    console.log(`Axios Interceptor Response error.response status is ${error.response.status}`);
-    console.log(`PreviousRequest retry is ${prevRequest.retry}`);
+    // console.log(`PreviousURL is ${previousURL}`);
+    // console.log(`Axios Interceptor Response error.response status is ${error.response.status}`);
+    // console.log(`PreviousRequest retry is ${prevRequest.retry}`);
     if ( error.response.status === 403 && !prevRequest.retry ){
         // Request again to get accessToken
         prevRequest.retry = true ;
@@ -46,14 +46,14 @@ export const responseInterceptor = axiosWithCredentials.interceptors.response.us
     
             if (secondResponse.status === 200){
                 console.log(`Access Token Renewed successfully from BackEnd`);
-                console.log('Previous Request method is ', error.config.method);
-                console.log('Previous Request data is ', error.config.data);
-                console.log('Previous Request headers is ', error.config.headers);
+                // console.log('Previous Request method is ', error.config.method);
+                // console.log('Previous Request data is ', error.config.data);
+                // console.log('Previous Request headers is ', error.config.headers);
                 
                 const previousHTTPMethod = error.config.method;
                 const previousHTTPData = error.config.data;
                 const previousHTTPContentType = error.config.headers["Content-Type"];
-                console.log('previousHTTPContentType is ', previousHTTPContentType);
+                //console.log('previousHTTPContentType is ', previousHTTPContentType);
 
                 const sendAgainPreviousRequest = await axios(
                     {
@@ -73,11 +73,11 @@ export const responseInterceptor = axiosWithCredentials.interceptors.response.us
         }
 
         catch(error) {
-            console.log("In the catch block of refreshToken Axios Retry, Error : ", error);
+            console.log("In the catch block of Axios Retry, Error : ", error);
 
             if (axios.isAxiosError(error)) {
                 if (error.response?.status === 400) {
-                    console.log("Error Response Status is 400, mean it may return the error message from Express Validator.")
+                    //console.log("Error Response Status is 400, mean it may return the error message from Express Validator.")
                     return Promise.reject(error);
                 }
             }

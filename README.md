@@ -15,7 +15,7 @@
 
 This is just a web application demonstration built with React, TypeScript, ExpressJS, MongoDB and so on, Find Hidden Objects is a web-based mini game that lets user to find the hidden object by simply clicking on the image. 
 
-Images source : FreePik, Pinterest
+Images source : FreePik, Pinterest, LottieFiles
 
 ## Tech Stack & Features
 ### Frontend

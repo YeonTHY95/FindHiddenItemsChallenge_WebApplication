@@ -9,11 +9,6 @@ const SplashScreen = () => {
     const accessUseContext = React.useContext(accessContext);
     const accessToken = accessUseContext?.accessToken;
 
-    // React.useEffect (()=> {
-    //     if( accessToken) {
-    //         navigate( '/userPage');
-    //     }
-    // },[accessToken]);
 
     const navigate = useNavigate() ;
     

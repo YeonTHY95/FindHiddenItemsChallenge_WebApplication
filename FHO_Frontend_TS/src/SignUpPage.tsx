@@ -41,7 +41,7 @@ const SignUpPage = () => {
         const signUpForm = document.getElementById("signUpForm") as HTMLFormElement;
         const formData = new FormData(signUpForm) ;
 
-        console.log("Inside signUpAction");
+        //console.log("Inside signUpAction");
         const signup_username = formData.get("signup_username");
         const signup_password = formData.get("signup_password");
 
@@ -119,13 +119,13 @@ const SignUpPage = () => {
             }
         });
 
-        console.log(signupResponseFromGraphQL) ;
+        //console.log(signupResponseFromGraphQL) ;
 
         const dataFromGraphQL = signupResponseFromGraphQL.data.data.signupNewAccount;
 
         if (dataFromGraphQL.status === 201) {
-            console.log("Toast here");
-            console.log("User successfully created at BackEnd, redirect to Login" );
+            // console.log("Toast here");
+            // console.log("User successfully created at BackEnd, redirect to Login" );
             
             
             navigate("/login", {state: { isSignUpSuccess: true} });

@@ -45,7 +45,7 @@ export default function UserInformationEditPage () {
 
         setSignUpNameErrorMessage('');
 
-        console.log("Inside editUserInfoFormSubmit") ;
+        //console.log("Inside editUserInfoFormSubmit") ;
 
         const editUserInfoFormData =  document.getElementById("editUserInfoFormID") as HTMLFormElement ;
         
@@ -67,8 +67,8 @@ export default function UserInformationEditPage () {
     
             if (updatedUserInfoResponse.status === 200) {
                 
-                console.log("User Information updated Successfully !!!");
-                console.log(`updatedUserInfoResponse is ${JSON.stringify(updatedUserInfoResponse)}`);
+                // console.log("User Information updated Successfully !!!");
+                // console.log(`updatedUserInfoResponse is ${JSON.stringify(updatedUserInfoResponse)}`);
 
                 setUserName && setUserName(updatedUserInfoResponse.data.name);
                 setUserAge && setUserAge(updatedUserInfoResponse.data.age);
@@ -89,7 +89,7 @@ export default function UserInformationEditPage () {
                 const errorFromResponse = error.response?.data.errors;
 
                 console.log("Inside isAxiorError Catch Block of User Edit") ;
-                console.log(JSON.stringify(errorFromResponse)) ;
+                //console.log(JSON.stringify(errorFromResponse)) ;
 
                 errorFromResponse.map ( (detail: { type: string; path: string; msg: string }) => {
                     if ( detail.type === "field") {

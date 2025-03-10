@@ -46,7 +46,7 @@ export default function UserPage () {
 
         async function startAxios() {
             
-            console.log(`Inside UserPage UseEffect`) ;
+            //console.log(`Inside UserPage UseEffect`) ;
 
             try {
                 console.log("Inside UserPage try AXIOS");
@@ -55,13 +55,9 @@ export default function UserPage () {
                 });
 
                 //console.log(`getUserInfoResponse : ${JSON.stringify(getUserInfoResponse.data)}`) ;
-                console.log("After await axiosWithCredentials, username is ", username);
-                console.log(`Status Code is ${getUserInfoResponse.status}`);
 
                 if (getUserInfoResponse.status === 200) {
                     const getUserInfoResponseData = getUserInfoResponse.data[0] ;
-
-                    console.log(`getUserInfoResponseData : ${JSON.stringify(getUserInfoResponseData)}`) ;
 
                     setUserName && setUserName( getUserInfoResponseData.name);
                     setUserAge && setUserAge( getUserInfoResponseData.age);
@@ -78,9 +74,8 @@ export default function UserPage () {
 
             catch(error) {
                 
-                console.log(`Inside UserPage Err ...`) ;
+                //console.log(`Inside UserPage Err ...`) ;
                 console.log(error);
-                console.log(`After Inside UserPage Err ...`) ;
                 setAccessToken && setAccessToken(false);
                 navigate("/login" , { state : locationHook.pathname , replace: true});
             }
