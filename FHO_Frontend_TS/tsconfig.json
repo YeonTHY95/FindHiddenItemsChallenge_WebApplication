@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "es2020",
+        "strict": true,
+        //"esModuleInterop": true,
+        //"skipLibCheck": true,
+        //"forceConsistentCasingInFileNames": true,
+        //"allowSyntheticDefaultImports" : true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        //"resolveJsonModule": true,
+        "noImplicitAny": true,
+        "moduleResolution": "bundler",
+        "strictNullChecks": true,
+        "noUncheckedIndexedAccess": true,
+        "jsx":"react",
+        "allowJs": false,
+        //"allowSyntheticDefaultImports":true,
+        "lib":["ES2020","DOM"],
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "**/*.spec.ts","unittest"]
+}

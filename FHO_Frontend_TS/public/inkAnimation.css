@@ -1,0 +1,41 @@
+#root {
+    text-align:  center;
+}
+.bigTitle {
+    box-sizing: border-box;
+    inset : 0;
+    margin : auto;
+    font-size : 50px;
+    
+    height : 100vh;
+    width : 100vw ;
+    position: relative;
+    
+    /* z-index: 10; */
+}
+
+
+.bigTitle::after {
+    border : var(--backgroundname);
+    content: '';
+    position: absolute;
+    background-image: url('bokehBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    inset : 0 ;
+    z-index: -1 ;
+    mask-image: url(inksplash.png);
+    
+    mask-position: center;
+    animation: maskAnimation 10s ;
+    animation-delay: 500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes maskAnimation {
+
+    from { mask-size : 10%;}
+    to { mask-size : 1000%;}
+    
+}
