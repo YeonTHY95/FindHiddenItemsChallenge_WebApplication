@@ -71,7 +71,7 @@ Make sure you have the following installed on your machine:
 - Docker
 
 Cloning the Repository
- > git clone https://github.com/YeonTHY95/FindHiddenItemsChallenge_WebApplication.git
+ > git clone https://github.com/YeonTHY95/FindHiddenObjectChallenge_WebApplication.git
  > 
  > cd FindHiddenItemsChallenge_WebApplication
 
