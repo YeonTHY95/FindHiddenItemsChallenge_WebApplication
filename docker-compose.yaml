@@ -38,11 +38,6 @@ services:
         condition: service_healthy
     ports:
       - "6677:6677"
-    
-          
-  
-
-  
   
   database_docker:
     image: postgres:17
@@ -81,34 +76,6 @@ services:
       - ./dbinit/mongoDB/:/docker-entrypoint-initdb.d/
     ports:
       - "27019:27017"
-      
-# sbemongo1:
-  #   container_name: Split_BE_withMongo1
-  #   build: 
-  #     context: BE_withMongo
-  #   depends_on:
-  #     database_mongoDB:
-  #       condition: service_healthy 
-  #   ports:
-  #     - "6690:6688" 
-  # sbemongo2:
-  #   container_name: Split_BE_withMongo2
-  #   build: 
-  #     context: BE_withMongo
-  #   depends_on:
-  #     database_mongoDB:
-  #       condition: service_healthy 
-  #   ports:
-  #     - "6691:6688" 
-  # sbemongo3:
-  #   container_name: Split_BE_withMongo3
-  #   build: 
-  #     context: BE_withMongo
-  #   depends_on:
-  #     database_mongoDB:
-  #       condition: service_healthy 
-  #   ports:
-  #     - "6692:6688" 
 
 volumes:
   testvolume:
