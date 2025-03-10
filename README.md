@@ -1,7 +1,7 @@
 # Find Hidden Objects Web Application
 
 <p align="center">This is the demonstration of <b>Find Hidden Objects Web Application</b></p>
-<p align="center">Video Demonstration : </p>
+<p align="center">Video Demonstration : https://youtu.be/myBZ7XfmxRw</p>
 
 ## Table of Contents
 
@@ -13,7 +13,9 @@
 
 ## Background
 
-Built with React, TypeScript, ExpressJS, MongoDB and so on, Find Hidden Objects is a web-based mini game that lets user to find the hidden object by simply clicking on the image. 
+This is just a web application demonstration built with React, TypeScript, ExpressJS, MongoDB and so on, Find Hidden Objects is a web-based mini game that lets user to find the hidden object by simply clicking on the image. 
+
+Images source : FreePik, Pinterest
 
 ## Tech Stack & Features
 ### Frontend
@@ -69,9 +71,9 @@ Make sure you have the following installed on your machine:
 - Docker
 
 Cloning the Repository
- > git clone
+ > git clone https://github.com/YeonTHY95/FindHiddenItemsChallenge_WebApplication.git
  > 
- > cd 
+ > cd FindHiddenItemsChallenge_WebApplication
 
 Start the Docker service
 
